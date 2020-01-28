@@ -1,3 +1,6 @@
+precompile()
+
+
 module MPBNGCInterface
 
 using LinearAlgebra
