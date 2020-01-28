@@ -1,4 +1,4 @@
-precompile()
+__precompile__(false) 
 
 
 module MPBNGCInterface
