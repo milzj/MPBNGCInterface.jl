@@ -1,0 +1,8 @@
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.jl.swp
+
+
+deps/wget.sh
+deps/usr
