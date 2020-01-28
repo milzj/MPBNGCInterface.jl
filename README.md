@@ -36,7 +36,7 @@ You can install `MPBNGCInterface.jl` through the
 [Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html):
 
 ```julia
-] add 
+] add https://github.com/milzj/MPBNGCInterface.jl.git
 ```
 
 The command should download the module and compile
