@@ -27,8 +27,8 @@ general constraints, respectively.
 `fᵢ` are objective and general constraint functions,
 and `C'` is the transposed of `C`.
 
-The module is an unregistered Julia package. It is supposed to
-run on Linux, Windows and Mac OS systems.
+The module is an unregistered Julia package. It has been tested
+on Linux and Mac OS. 
 
 ## Installation
 
@@ -70,7 +70,8 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-I have tested the module using the `julia version 1.1.1`.
+I have tested the module using the `julia version 1.1.1` and
+`julia version 1.3.1`
 
 ## Custom Installation
 
@@ -104,12 +105,13 @@ Function and subgradient evaluations are stored in
 `g` (a matrix of size `n x mm`), respectively. 
 `f[1:m]` are the objective function values and
 `f[m+1:mm]` the general constraint function values. 
-("!" is optional)
+("!" is optional.)
 
 If you consider a bound-constrained optimization problem,
 the "types" of the bounds `lb` and `ub` are stored in `ib`. Meaning, 
 the components of `ib` indicate whether the corresponding
-component of `x` is unconstrained, fixed, or lower or upper bounded. 
+component of `x` is unconstrained, fixed, bounded from below and/or
+bounded from above. 
 The "classification" is performed by the function `classify_bounds`
 called by the inner constructor
 of the mutable struct `BundleProblem` according to
