@@ -27,8 +27,7 @@ general constraints, respectively.
 `fᵢ` are objective and general constraint functions,
 and `C'` is the transposed of `C`.
 
-The module is an unregistered Julia package. It has been tested
-on Linux and Mac OS. 
+
 
 ## Installation
 
@@ -40,7 +39,7 @@ You can install `MPBNGCInterface.jl` through the
 ```
 
 The command should download the module and compile
-the Bundle method if you have `gfortran` installed.  
+the Bundle method if you have `gfortran` installed. 
 
 The code `build.jl` located in `deps`
 when executed attempts to download the
@@ -49,8 +48,11 @@ of the
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
 and tries to compile it together with its dependencies.
 
-The current version of the module has only been tested on a
-`Linux` operating system. 
+The module is an unregistered Julia package. It has successfully been tested
+on Linux and Mac OS using [Travics CI](https://travis-ci.com/)
+with `julia version 1.0.5, 1.1.1, 1.2.0 and 1.3.1`.
+Moreover, it has been tested on Windows 10 Education (version 10.0.16299) (64bit) with
+`julia version 1.3.1` and `gfortran` of `mingw-w64 (x86_64)`.
 
 ### Compilation with gfortan
 
@@ -58,20 +60,6 @@ This code uses `gfortran` to compile the
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/).
 
 The interface does not support other compiles than `gfortan`.
-
-The follwing indicates the operating system used to test the module as well
-as the `gfortan` version used. 
-
-```console
-gfortran --version
-GNU Fortran (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
-Copyright (C) 2017 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-```
-
-I have tested the module using the `julia version 1.1.1` and
-`julia version 1.3.1`
 
 ## Custom Installation
 
@@ -116,11 +104,11 @@ The "classification" is performed by the function `classify_bounds`
 called by the inner constructor
 of the mutable struct `BundleProblem` according to
 the rules indicated in the documentation of the function `classify_bounds`
-(see [src/Bounds.jl](./src/Bounds.jl)) 
-to match the input variable `IX` of the Fortran code of the bundle method.
+(see [src/Bounds.jl](./src/Bounds.jl)). The variable `ib` matches 
+the input variable `IX` of the Fortran code of the bundle method.
 
 You can modify `ib` before calling `solveProblem`, which
-calls the Fortran77 implemenation of the 
+calls the Fortran implemenation of the 
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/). 
 
 The bounds `lbc` and `ubc` (if present) get "classified" similarly
