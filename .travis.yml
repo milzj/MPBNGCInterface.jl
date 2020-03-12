@@ -1,0 +1,25 @@
+# Documentation: http://docs.travis-ci.com/user/languages/julia/
+language: julia
+os:
+  - linux
+  - osx
+julia:
+  - 0.7
+  - 1.0
+  - 1.1
+  - 1.2
+  - nightly
+addons:
+  apt:
+    packages:
+      - gfortran
+matrix:
+  allow_failures:
+    - julia: nightly
+notifications:
+  email: false
+before_install:
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then  brew cask uninstall --force oclint || true ; brew install gcc; fi
+after_success:
+  # push coverage results to Coveralls
+  - julia -e 'import Pkg; cd(Pkg.dir("MPBNGCInterface")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
