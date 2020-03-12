@@ -134,7 +134,9 @@ M.M. Mäkelä, N. Karmitsa, O. Wilppu: [Proximal Bundle Method for Nonsmooth
 and Nonconvex Multiobjective Optimization](http://napsu.karmitsa.fi/publications/pbm.pdf)
 in [Mathematical Modeling and Optimization of Complex Structures](http://link.springer.com/book/10.1007/978-3-319-23564-6). 
 T. Tuovinen, S. Repin and P. Neittaanmäki (eds.), 
-Vol. 40 of Computational Methods in Applied Sciences, pp. 191--204, Springer, 2016.
+Vol. 40 of 
+[Computational Methods in Applied Sciences](https://link.springer.com/bookseries/6899), 
+pp. 191--204, Springer, 2016.
 
 ## Acknowledgments
 
