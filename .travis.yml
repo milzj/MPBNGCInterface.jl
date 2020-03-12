@@ -20,7 +20,7 @@ notifications:
   email: false
 before_install:
  # - if [ "$TRAVIS_OS_NAME" == "osx" ]; then  brew cask uninstall --force oclint || true ; brew install gcc; fi
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then  brew install gcc; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then  brew upgrade gcc; fi
 after_success:
   # push coverage results to Coveralls
   - julia -e 'import Pkg; cd(Pkg.dir("MPBNGCInterface")); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
