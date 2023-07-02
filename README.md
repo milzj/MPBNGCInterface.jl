@@ -31,22 +31,40 @@ and `C'` is the transposed of `C`.
 
 ## Installation
 
-You can install `MPBNGCInterface.jl` through the 
+For `Julia` version above `1.3`, `MPBNGCInterface.jl` cannot be installed using the
 [Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html):
 
-```julia
-] add https://github.com/milzj/MPBNGCInterface.jl.git
+To download `MPBNGCInterface.jl` and compile `MPBNGC`, 
+the following commands can be executed in a terminal:
+
+```
+git clone https://github.com/milzj/MPBNGCInterface.jl.git@devel
+cd deps
+julia build.jl
+cd ..
 ```
 
-The command should download the module and compile
+These commands should download the module and compile
 the Bundle method if you have `gfortran` installed. 
-
 The code `build.jl` located in `deps`
 when executed attempts to download the
 [source code](http://napsu.karmitsa.fi/proxbundle/pb/mpbngc.tar.gz)
 of the 
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
 and tries to compile it together with its dependencies.
+
+To add `MPBNGCInterface` to Julia's path, we can use
+
+```
+julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
+```
+
+To run the tests, we can then execute
+```
+cd test
+julia  runtests.jl
+```
+
 
 The module is an unregistered Julia package. It has successfully been tested
 on Linux and Mac OS using [Travics CI](https://travis-ci.com/)
@@ -59,7 +77,7 @@ Moreover, it has been tested on Windows 10 Education (version 10.0.16299) (64bit
 This code uses `gfortran` to compile the 
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/).
 
-The interface does not support other compiles than `gfortan`.
+The interface does not support compilers other than `gfortan`.
 
 ## Custom Installation
 
@@ -153,5 +171,4 @@ large parts of his [ODEInterface.jl](https://github.com/luchr/ODEInterface.jl) c
 
 ## Author
 
-The module has been implemented by 
-[Johannes Milz](https://www-m1.ma.tum.de/bin/view/Lehrstuhl/JohannesMilz).
+The module has been implemented by Johannes Milz.
