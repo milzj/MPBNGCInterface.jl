@@ -39,7 +39,7 @@ To download `MPBNGCInterface.jl`, compile `MPBNGC`, and add
 `MPBNGCInterface` to Julia's path, the following commands can be executed in a terminal:
 
 ```
-git clone https://github.com/milzj/MPBNGCInterface.jl.git@devel
+git clone https://github.com/milzj/MPBNGCInterface.jl.git@dev
 cd MPBNGCInterface.jl
 julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
 ```
