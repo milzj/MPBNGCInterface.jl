@@ -40,6 +40,7 @@ To download `MPBNGCInterface.jl`, compile `MPBNGC`, and add
 
 ```
 git clone https://github.com/milzj/MPBNGCInterface.jl.git@devel
+cd MPBNGCInterface.jl
 julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
 ```
 
