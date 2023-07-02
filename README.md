@@ -32,6 +32,24 @@ and `C'` is the transposed of `C`.
 
 ## Installation
 
+You can install `MPBNGCInterface.jl` through the 
+[Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html)
+by executing the following command in the Pkg REPL:
+
+```julia
+add https://github.com/milzj/MPBNGCInterface.jl.git#dev
+```
+
+The command should download the module and compile
+the Bundle method if you have `gfortran` installed. 
+
+The code `build.jl` located in `deps`
+when executed attempts to download the
+[source code](http://napsu.karmitsa.fi/proxbundle/pb/mpbngc.tar.gz)
+of the 
+[Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
+and tries to compile it together with its dependencies.
+
 For `Julia` version above `1.3`, `MPBNGCInterface.jl` cannot be installed using the
 [Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html).
 
