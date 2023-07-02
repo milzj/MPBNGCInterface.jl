@@ -41,6 +41,9 @@ To download `MPBNGCInterface.jl`, compile `MPBNGC`, and add
 ```
 git clone -b dev https://github.com/milzj/MPBNGCInterface.jl.git
 cd MPBNGCInterface.jl
+cd deps
+julia build.jl
+cd ..
 julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
 ```
 
@@ -58,7 +61,6 @@ and tries to compile it together with its dependencies.
 To run the tests, we can then execute in the Pkg REPL,
 ```julia
 test MPBNGCInterface
-
 ```
 
 
