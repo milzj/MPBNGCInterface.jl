@@ -1,3 +1,4 @@
+![MPBNGCInterface.jl Tests](https://github.com/milzj/MPBNGCInterface.jl/actions/workflows/test.yml/badge.svg)
 
 # MPBNGCInterface.jl
 
