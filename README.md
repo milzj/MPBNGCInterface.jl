@@ -35,14 +35,12 @@ and `C'` is the transposed of `C`.
 For `Julia` version above `1.3`, `MPBNGCInterface.jl` cannot be installed using the
 [Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html).
 
-To download `MPBNGCInterface.jl` and compile `MPBNGC`, 
-the following commands can be executed in a terminal:
+To download `MPBNGCInterface.jl`, compile `MPBNGC`, and add
+`MPBNGCInterface` to Julia's path, the following commands can be executed in a terminal:
 
 ```
 git clone https://github.com/milzj/MPBNGCInterface.jl.git@devel
-cd deps
-julia build.jl
-cd ..
+julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
 ```
 
 These commands should download the module and compile
@@ -55,16 +53,10 @@ of the
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
 and tries to compile it together with its dependencies.
 
-To add `MPBNGCInterface` to Julia's path, 
 
-```
-julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
-```
-
-To run the tests, we can then execute
-```
-cd test
-julia  runtests.jl
+To run the tests, we can then execute in the Pkg REPL,
+```julia
+test MPBNGCInterface
 ```
 
 
