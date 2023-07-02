@@ -45,7 +45,8 @@ cd ..
 ```
 
 These commands should download the module and compile
-the Bundle method if you have `gfortran` installed. 
+the Bundle method *if* you have `gfortran` installed. 
+
 The code `build.jl` located in `deps`
 when executed attempts to download the
 [source code](http://napsu.karmitsa.fi/proxbundle/pb/mpbngc.tar.gz)
@@ -53,7 +54,7 @@ of the
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
 and tries to compile it together with its dependencies.
 
-To add `MPBNGCInterface` to Julia's path, we can use
+To add `MPBNGCInterface` to Julia's path, 
 
 ```
 julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
