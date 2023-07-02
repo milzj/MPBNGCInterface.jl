@@ -32,7 +32,7 @@ and `C'` is the transposed of `C`.
 ## Installation
 
 For `Julia` version above `1.3`, `MPBNGCInterface.jl` cannot be installed using the
-[Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html):
+[Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html).
 
 To download `MPBNGCInterface.jl` and compile `MPBNGC`, 
 the following commands can be executed in a terminal:
