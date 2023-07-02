@@ -1,6 +1,6 @@
 name = "MPBNGCInterface"
 uuid = "a69a4381-f1fe-46fe-a0d9-fb198c411755"
-authors = ["Johannes Milz <milz@ma.tum.de>"]
+authors = ["Johannes Milz"]
 version = "0.1.0"
 
 [deps]
