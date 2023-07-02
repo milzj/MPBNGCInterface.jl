@@ -41,7 +41,7 @@ add https://github.com/milzj/MPBNGCInterface.jl.git#dev
 ```
 
 The command should download the module and compile
-the Bundle method if you have `gfortran` installed. 
+the Bundle method **if** you have `gfortran` installed. 
 
 The code `build.jl` located in `deps`
 when executed attempts to download the
@@ -49,32 +49,6 @@ when executed attempts to download the
 of the 
 [Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
 and tries to compile it together with its dependencies.
-
-For `Julia` version above `1.3`, `MPBNGCInterface.jl` cannot be installed using the
-[Julia Package Manager](https://docs.julialang.org/en/v1/stdlib/Pkg/index.html).
-
-To download `MPBNGCInterface.jl`, compile `MPBNGC`, and add
-`MPBNGCInterface` to Julia's path, the following commands can be executed in a terminal:
-
-```
-git clone -b dev https://github.com/milzj/MPBNGCInterface.jl.git
-cd MPBNGCInterface.jl
-cd deps
-julia build.jl
-cd ..
-julia -e "import Pkg; path = pwd(); Pkg.add(path=path)"
-```
-
-These commands should download the module and compile
-the Bundle method *if* you have `gfortran` installed. 
-
-The code `build.jl` located in `deps`
-when executed attempts to download the
-[source code](http://napsu.karmitsa.fi/proxbundle/pb/mpbngc.tar.gz)
-of the 
-[Proximal Bundle Method `MPBNGC`](http://napsu.karmitsa.fi/proxbundle/)
-and tries to compile it together with its dependencies.
-
 
 To run the tests, we can then execute in the Pkg REPL,
 ```julia
