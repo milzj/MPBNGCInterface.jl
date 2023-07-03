@@ -37,7 +37,7 @@ You can install `MPBNGCInterface.jl` through the
 by executing the following command in the Pkg REPL:
 
 ```julia
-add https://github.com/milzj/MPBNGCInterface.jl.git#dev
+add https://github.com/milzj/MPBNGCInterface.jl.git
 ```
 
 The command should download the module and compile
