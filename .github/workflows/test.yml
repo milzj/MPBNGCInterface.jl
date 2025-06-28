@@ -35,11 +35,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Julia (x64 for compatibility)
+      - name: Set up Julia (architecture-aware)
         uses: julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.julia-version }}
-          arch: x64
+          arch: ${{ (matrix.julia-version == '1.2.0' || matrix.julia-version == '1.3.1' || matrix.julia-version == '1.5.3') && 'x64' || 'aarch64' }}
 
       - name: Cache Julia environment
         uses: julia-actions/cache@v1
@@ -49,7 +49,18 @@ jobs:
       - name: Build Julia package
         uses: julia-actions/julia-buildpkg@v1
 
-      - name: Run Julia tests
+      # Tests with --check-bounds for Julia >=1.6
+      - name: Run Julia tests (>= 1.6)
+        if: ${{ startsWith(matrix.julia-version, '1.6') || matrix.julia-version == '1' || matrix.julia-version == 'nightly' }}
         uses: julia-actions/julia-runtest@v1
         with:
           annotate: true
+          julia-args: --check-bounds=yes --compiled-modules=yes --depwarn=yes
+
+      # Tests without --check-bounds for Julia <1.6
+      - name: Run Julia tests (< 1.6)
+        if: ${{ !(startsWith(matrix.julia-version, '1.6') || matrix.julia-version == '1' || matrix.julia-version == 'nightly') }}
+        uses: julia-actions/julia-runtest@v1
+        with:
+          annotate: true
+          julia-args: --compiled-modules=yes --depwarn=yes
