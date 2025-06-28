@@ -1,4 +1,6 @@
 [![MPBNGCInterface.jl Tests](https://github.com/milzj/MPBNGCInterface.jl/actions/workflows/test.yml/badge.svg)](https://github.com/milzj/MPBNGCInterface.jl/actions)
+[![DOI](https://zenodo.org/badge/236770302.svg)](https://doi.org/10.5281/zenodo.15760332)
+
 
 # MPBNGCInterface.jl
 
